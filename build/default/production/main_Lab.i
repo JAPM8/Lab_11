@@ -1,4 +1,4 @@
-# 1 "main_preLab.c"
+# 1 "main_Lab.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main_preLab.c" 2
-# 15 "main_preLab.c"
+# 1 "main_Lab.c" 2
+# 11 "main_Lab.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2644,11 +2644,14 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 33 "main_preLab.c" 2
+# 29 "main_Lab.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\stdint.h" 1 3
-# 34 "main_preLab.c" 2
-# 44 "main_preLab.c"
+# 30 "main_Lab.c" 2
+# 40 "main_Lab.c"
+char cont_master = 0;
+char cont_slave = 0xFF;
+char val_temporal = 0;
 uint8_t val_pot = 0;
 
 
@@ -2656,99 +2659,91 @@ uint8_t val_pot = 0;
 
 void setup(void);
 
-void __attribute__((picinterrupt(("")))) isr(void){
-    if(PORTAbits.RA5){
 
-        if (PIR1bits.ADIF){
-            if (ADCON0bits.CHS == 0){
-                val_pot = ADRESH;
 
-                if(SSPSTATbits.BF){
-                    SSPBUF = val_pot;
-                }
-            }
-            PIR1bits.ADIF = 0;
+void __attribute__((picinterrupt(("")))) isr (void){
+
+    if (PIR1bits.ADIF){
+        if (ADCON0bits.CHS == 0){
+            val_pot = ADRESH;
         }
+        PIR1bits.ADIF = 0;
     }
-    else{
 
-        if (PIR1bits.SSPIF){
-            PORTD = SSPBUF;
-            PIR1bits.SSPIF = 0;
+    if (PIR1bits.SSPIF){
+        PORTD = SSPBUF;
+        PIR1bits.SSPIF = 0;
+    }
+
+    return;
+}
+
+
+
+void main(void) {
+    setup();
+    while(1){
+        if(ADCON0bits.GO == 0){
+            ADCON0bits.GO = 1;
         }
+
+
+        PORTAbits.RA7 = 1;
+        _delay((unsigned long)((10)*(1000000/4000.0)));
+        PORTAbits.RA7 = 0;
+
+
+        SSPBUF = val_pot;
+        while(!SSPSTATbits.BF){}
+
+        _delay((unsigned long)((1000)*(1000000/4000.0)));
     }
     return;
 }
 
-void main(void) {
-
-    setup();
-
-    while(1)
-    {
-        if(ADCON0bits.GO == 0){
-            ADCON0bits.GO = 1;
-        }
-     }
-}
 
 
 void setup(void){
     ANSEL = 0x01;
     ANSELH = 0;
 
-    OSCCONbits.IRCF = 0b100;
-    OSCCONbits.SCS = 1;
-
-    TRISA = 0b00100001;
+    TRISA = 0b01;
     PORTA = 0;
+
 
     TRISD = 0;
     PORTD = 0;
 
-    if(PORTAbits.RA5){
-        TRISC = 0b00010000;
-        PORTC = 0;
+    OSCCONbits.IRCF = 0b100;
+    OSCCONbits.SCS = 1;
 
 
-        SSPCONbits.SSPM = 0b0000;
-        SSPCONbits.CKP = 0;
-        SSPCONbits.SSPEN = 1;
-
-        SSPSTATbits.CKE = 1;
-        SSPSTATbits.SMP = 1;
-        SSPBUF = val_pot;
 
 
-        ADCON0bits.ADCS = 0b01;
-        ADCON1bits.VCFG0 = 0;
-        ADCON1bits.VCFG1 = 0;
-        ADCON0bits.CHS = 0b0000;
-        ADCON1bits.ADFM = 0;
-        ADCON0bits.ADON = 1;
-        _delay((unsigned long)((40)*(1000000/4000000.0)));
+    TRISC = 0b00010000;
+    PORTC = 0;
 
 
-        INTCONbits.GIE = 1;
-        PIE1bits.ADIE = 1;
-        PIR1bits.ADIF = 0;
-        INTCONbits.PEIE = 1;
-    }
-    else{
-        TRISC = 0b00011000;
-        PORTC = 0;
+    SSPCONbits.SSPM = 0b0000;
+    SSPCONbits.CKP = 0;
+    SSPCONbits.SSPEN = 1;
+
+    SSPSTATbits.CKE = 1;
+    SSPSTATbits.SMP = 1;
+    SSPBUF = cont_master;
 
 
-        SSPCONbits.SSPM = 0b0100;
-        SSPCONbits.CKP = 0;
-        SSPCONbits.SSPEN = 1;
+    ADCON0bits.ADCS = 0b01;
+    ADCON1bits.VCFG0 = 0;
+    ADCON1bits.VCFG1 = 0;
+    ADCON0bits.CHS = 0b0000;
+    ADCON1bits.ADFM = 0;
+    ADCON0bits.ADON = 1;
+    _delay((unsigned long)((40)*(1000000/4000000.0)));
 
-        SSPSTATbits.CKE = 1;
-        SSPSTATbits.SMP = 0;
 
-        PIE1bits.SSPIE = 1;
-        PIR1bits.SSPIF = 0;
-        INTCONbits.PEIE = 1;
-        INTCONbits.GIE = 1;
-    }
- }
+    INTCONbits.GIE = 1;
+    PIE1bits.ADIE = 1;
+    PIR1bits.ADIF = 0;
+    INTCONbits.PEIE = 1;
+}
