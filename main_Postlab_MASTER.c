@@ -124,7 +124,7 @@ void setup(void){
     SSPCONbits.CKP = 0; // Reloj inactivo en 0
     SSPCONbits.SSPEN = 1; // Habilitamos pines de SPI
     // SSPSTAT<7:6>
-    SSPSTATbits.CKE = 1; // Dato enviado cada flanco de subida
+    SSPSTATbits.CKE = 1; // Dato enviado cada flanco de subida del SCK
     SSPSTATbits.SMP = 1;  // Dato al final del pulso de reloj
     SSPBUF = 100;  // Enviamos un dato inicial
     
