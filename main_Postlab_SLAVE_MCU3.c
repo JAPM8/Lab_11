@@ -1,6 +1,8 @@
 /*
  * File:   main_Postlab_SLAVE_MCU3.c
- * Author: javyp
+ * Author: Javier Alejandro Pérez Marín 
+ * 
+ * Slave que mediante comunicación SPI full duplex envía contador a PIC maestro.
  *
  * Created on 13 de mayo de 2022, 11:59 AM
  */
@@ -32,9 +34,6 @@
 /*------------------------------------------------------------------------------
  * VARIABLES 
  ------------------------------------------------------------------------------*/
-char cont_master = 0;
-char cont_slave = 0xFF;
-char val_temporal = 0;
 uint8_t contador = 0;
 /*------------------------------------------------------------------------------
  * PROTOTIPO DE FUNCIONES 
@@ -44,11 +43,6 @@ void setup(void);
  * INTERRUPCIONES 
  ------------------------------------------------------------------------------*/
 void __interrupt() isr (void){
-    if (PIR1bits.SSPIF){
-        
-        SSPBUF = contador; // respondemos con valor de contador
-        PIR1bits.SSPIF = 0;  // Limpiamos bandera de interrupción 
-    }
     if (INTCONbits.RBIF){
         if (!PORTBbits.RB0){ //Pb de incremento
             contador ++;
@@ -57,6 +51,11 @@ void __interrupt() isr (void){
         }       
         INTCONbits.RBIF = 0; //Limpieza de bandera
     }
+    if (PIR1bits.SSPIF){
+        SSPBUF = contador; // respondemos con valor de contador
+        PIR1bits.SSPIF = 0;  // Limpiamos bandera de interrupción 
+    }
+    
     return;
 }
 /*------------------------------------------------------------------------------
@@ -76,7 +75,7 @@ void setup(void){
     ANSEL = 0;
     ANSELH = 0;
     
-    TRISBbits.TRISB0 = 1;      //RB0 & RB1 COMO INPUT
+    TRISBbits.TRISB0 = 1; //RB0 & RB1 COMO INPUT
     TRISBbits.TRISB1 = 1;
     PORTB = 0;      //CLEAR DE PUERTO B
     
@@ -92,16 +91,16 @@ void setup(void){
     
     // Configuracion de SPI
     // Configs del esclavo
-    TRISC = 0b00011000; // -> SDI y SCK entradas, SD0 como salida
+    TRISC = 0b00011000; // SDI y SCK entradas, SD0 como salida
     PORTC = 0;
 
     // SSPCON <5:0>
-    SSPCONbits.SSPM = 0b0100;   // -> SPI Esclavo, SS hablitado
-    SSPCONbits.CKP = 0;         // -> Reloj inactivo en 0
-    SSPCONbits.SSPEN = 1;       // -> Habilitamos pines de SPI
+    SSPCONbits.SSPM = 0b0100; // SPI Esclavo, SS hablitado
+    SSPCONbits.CKP = 0; // Reloj inactivo en 0
+    SSPCONbits.SSPEN = 1; // Habilitamos pines de SPI
     // SSPSTAT<7:6>
-    SSPSTATbits.CKE = 1;        // -> Dato enviado cada flanco de subida
-    SSPSTATbits.SMP = 0;        // -> Dato al final del pulso de reloj
+    SSPSTATbits.CKE = 1; // Dato enviado cada flanco de subida
+    SSPSTATbits.SMP = 0; // Dato al final del pulso de reloj
 
     PIR1bits.SSPIF = 0; // Limpiamos bandera de SPI
     PIE1bits.SSPIE = 1;  // Habilitamos int. de SPI

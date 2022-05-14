@@ -1,6 +1,9 @@
 /*
  * File:   main_Postlab_SLAVE_MCU2.c
- * Author: javyp
+ * Author: Javier Alejandro Pérez Marín 
+ * 
+ * Slave que mediante comunicación SPI full duplex recibe  ADRESH genera señal 
+ * PWM de ancho de pulso variable
  *
  * Created on 13 de mayo de 2022, 12:03 PM
  */
@@ -37,8 +40,7 @@
 /*------------------------------------------------------------------------------
  * VARIABLES 
  ------------------------------------------------------------------------------*/
-char val_temporal = 0;
-uint8_t valor_pwm;
+uint8_t valor_pwm; //Valor del ADRESH
 unsigned short CCPR = 0; //Variable para almacenar ancho de pulso en interpolación lineal
 
 /*------------------------------------------------------------------------------
@@ -77,11 +79,7 @@ void main(void) {
 void setup(void){
     ANSEL = 0;
     ANSELH = 0;
-    
-    TRISBbits.TRISB0 = 1;      //RB0 & RB1 COMO INPUT
-    TRISBbits.TRISB1 = 1;
-    PORTB = 0;      //CLEAR DE PUERTO B
-    
+        
     TRISD = 0;
     PORTD = 0;
     
@@ -93,16 +91,16 @@ void setup(void){
     
     // Configuracion de SPI
     // Configs del esclavo
-    TRISC = 0b00011000; // -> SDI y SCK entradas, SD0 como salida
+    TRISC = 0b00011000; // SDI y SCK entradas, SD0 como salida
     PORTC = 0;
 
     // SSPCON <5:0>
-    SSPCONbits.SSPM = 0b0100;   // -> SPI Esclavo, SS hablitado
-    SSPCONbits.CKP = 0;         // -> Reloj inactivo en 0
-    SSPCONbits.SSPEN = 1;       // -> Habilitamos pines de SPI
+    SSPCONbits.SSPM = 0b0100; // SPI Esclavo, SS hablitado
+    SSPCONbits.CKP = 0; //Reloj inactivo en 0
+    SSPCONbits.SSPEN = 1; // Habilitamos pines de SPI
     // SSPSTAT<7:6>
-    SSPSTATbits.CKE = 1;        // -> Dato enviado cada flanco de subida
-    SSPSTATbits.SMP = 0;        // -> Dato al final del pulso de reloj
+    SSPSTATbits.CKE = 1; // Dato enviado cada flanco de subida
+    SSPSTATbits.SMP = 0; // Dato al final del pulso de reloj
     
     //Config PWM
     CCP1CON = 0; // Se apaga CCP1
