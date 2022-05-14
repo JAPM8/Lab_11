@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\Lab_11.X.production.hex">
+  <executable name="dist/default/production\Lab_11_MASTER.X.production.hex">
     <memory name="program">
       <units>words</units>
       <length>8192</length>
-      <used>184</used>
-      <free>8008</free>
+      <used>208</used>
+      <free>7984</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>368</length>
-      <used>13</used>
-      <free>355</free>
+      <used>11</used>
+      <free>357</free>
     </memory>
   </executable>
 </project>

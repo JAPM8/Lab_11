@@ -1,4 +1,4 @@
-# 1 "main_Lab.c"
+# 1 "main_Postlab_MASTER.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,15 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main_Lab.c" 2
-# 11 "main_Lab.c"
+# 1 "main_Postlab_MASTER.c" 2
+
+
+
+
+
+
+
+
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2644,13 +2651,11 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 29 "main_Lab.c" 2
+# 27 "main_Postlab_MASTER.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\stdint.h" 1 3
-# 30 "main_Lab.c" 2
-# 40 "main_Lab.c"
-char cont_master = 0;
-char cont_slave = 0xFF;
+# 28 "main_Postlab_MASTER.c" 2
+# 38 "main_Postlab_MASTER.c"
 char val_temporal = 0;
 uint8_t val_pot = 0;
 
@@ -2658,6 +2663,7 @@ uint8_t val_pot = 0;
 
 
 void setup(void);
+
 
 
 
@@ -2696,7 +2702,20 @@ void main(void) {
         SSPBUF = val_pot;
         while(!SSPSTATbits.BF){}
 
+
+        PORTAbits.RA7 = 1;
+        PORTAbits.RA6 = 1;
+        _delay((unsigned long)((10)*(1000000/4000.0)));
+        PORTAbits.RA7 = 0;
+
+
+        PORTAbits.RA6 = 1;
+        _delay((unsigned long)((10)*(1000000/4000.0)));
+        PORTD = SSPBUF;
+        PORTAbits.RA6 = 0;
+
         _delay((unsigned long)((1000)*(1000000/4000.0)));
+
     }
     return;
 }
@@ -2730,7 +2749,7 @@ void setup(void){
 
     SSPSTATbits.CKE = 1;
     SSPSTATbits.SMP = 1;
-    SSPBUF = cont_master;
+    SSPBUF = val_pot;
 
 
     ADCON0bits.ADCS = 0b01;
