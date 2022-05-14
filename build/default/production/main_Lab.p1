@@ -38,16 +38,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1239
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1239: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
 [v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
-"353
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 353: extern volatile unsigned char PORTD __attribute__((address(0x008)));
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
-"844
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 844: extern volatile unsigned char SSPBUF __attribute__((address(0x013)));
-[v _SSPBUF `Vuc ~T0 @X0 0 e@19 ]
 [p mainexit ]
+<<<<<<< Updated upstream:build/default/production/main_Lab.p1
 "48 main_Lab.c
 [; ;main_Lab.c: 48: void setup(void);
+=======
+"45 main_Postlab_MASTER.c
+[; ;main_Postlab_MASTER.c: 45: void setup(void);
+>>>>>>> Stashed changes:build/default/production/main_Postlab_MASTER.p1
 [v _setup `(v ~T0 @X0 0 ef ]
+[v F36 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
+[v __delay `JF36 ~T0 @X0 0 e ]
+[p i __delay ]
 "173 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 173:     struct {
 [s S6 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -59,11 +62,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "184
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 184: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x005)));
 [v _PORTAbits `VS5 ~T0 @X0 0 e@5 ]
-[v F36 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
-[v __delay `JF36 ~T0 @X0 0 e ]
-[p i __delay ]
-"2184 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+"844
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 844: extern volatile unsigned char SSPBUF __attribute__((address(0x013)));
+[v _SSPBUF `Vuc ~T0 @X0 0 e@19 ]
+"2184
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2184:     struct {
 [s S82 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S82 . BF UA R_nW S P D_nA CKE SMP ]
@@ -98,6 +100,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2232
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2232: extern volatile SSPSTATbits_t SSPSTATbits __attribute__((address(0x094)));
 [v _SSPSTATbits `VS81 ~T0 @X0 0 e@148 ]
+"353
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 353: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 "3388
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3388: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
@@ -186,6 +191,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1719
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1719: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x08C)));
 [v _PIE1bits `VS62 ~T0 @X0 0 e@140 ]
+<<<<<<< Updated upstream:build/default/production/main_Lab.p1
 "11 main_Lab.c
 [p x FOSC  =  INTRC_NOCLKOUT ]
 "12
@@ -209,6 +215,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23
 [p x BOR4V  =  BOR40V    ]
 "24
+=======
+"12 main_Postlab_MASTER.c
+[p x FOSC  =  INTRC_NOCLKOUT ]
+"13
+[p x WDTE  =  OFF        ]
+"14
+[p x PWRTE  =  OFF       ]
+"15
+[p x MCLRE  =  OFF       ]
+"16
+[p x CP  =  OFF          ]
+"17
+[p x CPD  =  OFF         ]
+"18
+[p x BOREN  =  OFF       ]
+"19
+[p x IESO  =  OFF        ]
+"20
+[p x FCMEN  =  OFF       ]
+"21
+[p x LVP  =  OFF         ]
+"24
+[p x BOR4V  =  BOR40V    ]
+"25
+>>>>>>> Stashed changes:build/default/production/main_Postlab_MASTER.p1
 [p x WRT  =  OFF         ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 55: __asm("INDF equ 00h");
@@ -444,6 +475,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3547
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3547: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
+<<<<<<< Updated upstream:build/default/production/main_Lab.p1
 "40 main_Lab.c
 [; ;main_Lab.c: 40: char cont_master = 0;
 [v _cont_master `uc ~T0 @X0 1 e ]
@@ -464,17 +496,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 "43
 [; ;main_Lab.c: 43: uint8_t val_pot = 0;
+=======
+"40 main_Postlab_MASTER.c
+[; ;main_Postlab_MASTER.c: 40: uint8_t val_pot = 0;
+>>>>>>> Stashed changes:build/default/production/main_Postlab_MASTER.p1
 [v _val_pot `uc ~T0 @X0 1 e ]
 [i _val_pot
 -> -> 0 `i `uc
 ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
+<<<<<<< Updated upstream:build/default/production/main_Lab.p1
 "52
 [; ;main_Lab.c: 52: void __attribute__((picinterrupt(("")))) isr (void){
+=======
+"50
+[; ;main_Postlab_MASTER.c: 50: void __attribute__((picinterrupt(("")))) isr (void){
+>>>>>>> Stashed changes:build/default/production/main_Postlab_MASTER.p1
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
+<<<<<<< Updated upstream:build/default/production/main_Lab.p1
 "54
 [; ;main_Lab.c: 54:     if (PIR1bits.ADIF){
 [e $ ! != -> . . _PIR1bits 0 6 `i -> 0 `i 139  ]
@@ -521,10 +563,45 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v $root$_main `(v ~T0 @X0 0 e ]
 "71
 [; ;main_Lab.c: 71: void main(void) {
+=======
+"52
+[; ;main_Postlab_MASTER.c: 52:     if (PIR1bits.ADIF){
+[e $ ! != -> . . _PIR1bits 0 6 `i -> 0 `i 139  ]
+{
+"53
+[; ;main_Postlab_MASTER.c: 53:         if (ADCON0bits.CHS == 0){
+[e $ ! == -> . . _ADCON0bits 0 2 `i -> 0 `i 140  ]
+{
+"54
+[; ;main_Postlab_MASTER.c: 54:             val_pot = ADRESH;
+[e = _val_pot _ADRESH ]
+"55
+[; ;main_Postlab_MASTER.c: 55:         }
+}
+[e :U 140 ]
+"56
+[; ;main_Postlab_MASTER.c: 56:         PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"57
+[; ;main_Postlab_MASTER.c: 57:     }
+}
+[e :U 139 ]
+"59
+[; ;main_Postlab_MASTER.c: 59:     return;
+[e $UE 138  ]
+"60
+[; ;main_Postlab_MASTER.c: 60: }
+[e :UE 138 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"64
+[; ;main_Postlab_MASTER.c: 64: void main(void) {
+>>>>>>> Stashed changes:build/default/production/main_Postlab_MASTER.p1
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
+<<<<<<< Updated upstream:build/default/production/main_Lab.p1
 "72
 [; ;main_Lab.c: 72:     setup();
 [e ( _setup ..  ]
@@ -582,10 +659,103 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "94
 [; ;main_Lab.c: 94: void setup(void){
+=======
+"65
+[; ;main_Postlab_MASTER.c: 65:     setup();
+[e ( _setup ..  ]
+"66
+[; ;main_Postlab_MASTER.c: 66:     while(1){
+[e :U 143 ]
+{
+"67
+[; ;main_Postlab_MASTER.c: 67:         if(ADCON0bits.GO == 0){
+[e $ ! == -> . . _ADCON0bits 1 1 `i -> 0 `i 145  ]
+{
+"68
+[; ;main_Postlab_MASTER.c: 68:             ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+"69
+[; ;main_Postlab_MASTER.c: 69:             _delay((unsigned long)((40)*(1000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 1000000 `l `d .4000000.0 `ul ]
+"70
+[; ;main_Postlab_MASTER.c: 70:         }
+}
+[e :U 145 ]
+"73
+[; ;main_Postlab_MASTER.c: 73:         PORTAbits.RA6 = 1;
+[e = . . _PORTAbits 0 6 -> -> 1 `i `uc ]
+"74
+[; ;main_Postlab_MASTER.c: 74:         _delay((unsigned long)((50)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"75
+[; ;main_Postlab_MASTER.c: 75:         PORTAbits.RA7 = 0;
+[e = . . _PORTAbits 0 7 -> -> 0 `i `uc ]
+"76
+[; ;main_Postlab_MASTER.c: 76:         _delay((unsigned long)((50)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"79
+[; ;main_Postlab_MASTER.c: 79:         SSPBUF = val_pot;
+[e = _SSPBUF _val_pot ]
+"80
+[; ;main_Postlab_MASTER.c: 80:         while(!SSPSTATbits.BF){}
+[e $U 146  ]
+[e :U 147 ]
+{
+}
+[e :U 146 ]
+[e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 147  ]
+[e :U 148 ]
+"83
+[; ;main_Postlab_MASTER.c: 83:         PORTAbits.RA7 = 1;
+[e = . . _PORTAbits 0 7 -> -> 1 `i `uc ]
+"84
+[; ;main_Postlab_MASTER.c: 84:        _delay((unsigned long)((50)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"87
+[; ;main_Postlab_MASTER.c: 87:         PORTAbits.RA6 = 0;
+[e = . . _PORTAbits 0 6 -> -> 0 `i `uc ]
+"88
+[; ;main_Postlab_MASTER.c: 88:         _delay((unsigned long)((50)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"91
+[; ;main_Postlab_MASTER.c: 91:         SSPBUF = 0xFF;
+[e = _SSPBUF -> -> 255 `i `uc ]
+"92
+[; ;main_Postlab_MASTER.c: 92:         while(!SSPSTATbits.BF){}
+[e $U 149  ]
+[e :U 150 ]
+{
+}
+[e :U 149 ]
+[e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 150  ]
+[e :U 151 ]
+"93
+[; ;main_Postlab_MASTER.c: 93:         PORTD = SSPBUF;
+[e = _PORTD _SSPBUF ]
+"95
+[; ;main_Postlab_MASTER.c: 95:         _delay((unsigned long)((50)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"96
+[; ;main_Postlab_MASTER.c: 96:     }
+}
+[e :U 142 ]
+[e $U 143  ]
+[e :U 144 ]
+"97
+[; ;main_Postlab_MASTER.c: 97:     return;
+[e $UE 141  ]
+"98
+[; ;main_Postlab_MASTER.c: 98: }
+[e :UE 141 ]
+}
+"102
+[; ;main_Postlab_MASTER.c: 102: void setup(void){
+>>>>>>> Stashed changes:build/default/production/main_Postlab_MASTER.p1
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
+<<<<<<< Updated upstream:build/default/production/main_Lab.p1
 "95
 [; ;main_Lab.c: 95:     ANSEL = 0x01;
 [e = _ANSEL -> -> 1 `i `uc ]
@@ -670,4 +840,90 @@ Version 4.0 HI-TECH Software Intermediate Code
 "137
 [; ;main_Lab.c: 137: }
 [e :UE 150 ]
+=======
+"103
+[; ;main_Postlab_MASTER.c: 103:     ANSEL = 0x01;
+[e = _ANSEL -> -> 1 `i `uc ]
+"104
+[; ;main_Postlab_MASTER.c: 104:     ANSELH = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
+"106
+[; ;main_Postlab_MASTER.c: 106:     TRISA = 0x01;
+[e = _TRISA -> -> 1 `i `uc ]
+"107
+[; ;main_Postlab_MASTER.c: 107:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+"110
+[; ;main_Postlab_MASTER.c: 110:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
+"111
+[; ;main_Postlab_MASTER.c: 111:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"113
+[; ;main_Postlab_MASTER.c: 113:     OSCCONbits.IRCF = 0b100;
+[e = . . _OSCCONbits 0 4 -> -> 4 `i `uc ]
+"114
+[; ;main_Postlab_MASTER.c: 114:     OSCCONbits.SCS = 1;
+[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
+"119
+[; ;main_Postlab_MASTER.c: 119:     TRISC = 0b00010000;
+[e = _TRISC -> -> 16 `i `uc ]
+"120
+[; ;main_Postlab_MASTER.c: 120:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
+"123
+[; ;main_Postlab_MASTER.c: 123:     SSPCONbits.SSPM = 0b0000;
+[e = . . _SSPCONbits 0 0 -> -> 0 `i `uc ]
+"124
+[; ;main_Postlab_MASTER.c: 124:     SSPCONbits.CKP = 0;
+[e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
+"125
+[; ;main_Postlab_MASTER.c: 125:     SSPCONbits.SSPEN = 1;
+[e = . . _SSPCONbits 0 2 -> -> 1 `i `uc ]
+"127
+[; ;main_Postlab_MASTER.c: 127:     SSPSTATbits.CKE = 1;
+[e = . . _SSPSTATbits 0 6 -> -> 1 `i `uc ]
+"128
+[; ;main_Postlab_MASTER.c: 128:     SSPSTATbits.SMP = 1;
+[e = . . _SSPSTATbits 0 7 -> -> 1 `i `uc ]
+"129
+[; ;main_Postlab_MASTER.c: 129:     SSPBUF = 100;
+[e = _SSPBUF -> -> 100 `i `uc ]
+"132
+[; ;main_Postlab_MASTER.c: 132:     ADCON0bits.ADCS = 0b01;
+[e = . . _ADCON0bits 0 3 -> -> 1 `i `uc ]
+"133
+[; ;main_Postlab_MASTER.c: 133:     ADCON1bits.VCFG0 = 0;
+[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
+"134
+[; ;main_Postlab_MASTER.c: 134:     ADCON1bits.VCFG1 = 0;
+[e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
+"135
+[; ;main_Postlab_MASTER.c: 135:     ADCON0bits.CHS = 0b0000;
+[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
+"136
+[; ;main_Postlab_MASTER.c: 136:     ADCON1bits.ADFM = 0;
+[e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
+"137
+[; ;main_Postlab_MASTER.c: 137:     ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+"138
+[; ;main_Postlab_MASTER.c: 138:     _delay((unsigned long)((40)*(1000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 1000000 `l `d .4000000.0 `ul ]
+"141
+[; ;main_Postlab_MASTER.c: 141:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"142
+[; ;main_Postlab_MASTER.c: 142:     PIE1bits.ADIE = 1;
+[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
+"143
+[; ;main_Postlab_MASTER.c: 143:     PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"144
+[; ;main_Postlab_MASTER.c: 144:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"145
+[; ;main_Postlab_MASTER.c: 145: }
+[e :UE 152 ]
+>>>>>>> Stashed changes:build/default/production/main_Postlab_MASTER.p1
 }

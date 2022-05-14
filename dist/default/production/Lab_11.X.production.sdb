@@ -11,15 +11,23 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+<<<<<<< Updated upstream:dist/default/production/Lab_11.X.production.sdb
 "52 C:\Users\javyp\OneDrive\Documentos\UNIVERSIDAD\Progra_MICROS\Lab_11_SPI\Lab_11.X\main_Lab.c
 [v _isr isr `II(v  1 e 1 0 ]
 "71
 [v _main main `(v  1 e 1 0 ]
 "94
+=======
+"50 C:\Users\javyp\OneDrive\Documentos\UNIVERSIDAD\Progra_MICROS\Lab_11_SPI\Lab_11_MASTER.X\main_Postlab_MASTER.c
+[v _isr isr `II(v  1 e 1 0 ]
+"64
+[v _main main `(v  1 e 1 0 ]
+"102
+>>>>>>> Stashed changes:dist/default/production/Lab_11_MASTER.X.production.sdb
 [v _setup setup `(v  1 e 1 0 ]
 "167 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
-[s S94 . 1 `uc 1 RA0 1 0 :1:0 
+[s S98 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -29,8 +37,8 @@
 `uc 1 RA7 1 0 :1:7 
 ]
 "184
-[u S103 . 1 `S94 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES103  1 e 1 @5 ]
+[u S107 . 1 `S98 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES107  1 e 1 @5 ]
 "291
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "353
@@ -135,7 +143,7 @@
 ]
 [u S226 . 1 `S215 1 . 1 0 `S221 1 . 1 0 ]
 [v _OSCCONbits OSCCONbits `VES226  1 e 1 @143 ]
-[s S121 . 1 `uc 1 BF 1 0 :1:0 
+[s S120 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -145,39 +153,39 @@
 `uc 1 SMP 1 0 :1:7 
 ]
 "2232
-[s S130 . 1 `uc 1 . 1 0 :2:0 
+[s S129 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S135 . 1 `uc 1 . 1 0 :2:0 
+[s S134 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S141 . 1 `uc 1 . 1 0 :2:0 
+[s S140 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S146 . 1 `uc 1 . 1 0 :2:0 
+[s S145 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S151 . 1 `uc 1 . 1 0 :2:0 
+[s S150 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S156 . 1 `uc 1 . 1 0 :2:0 
+[s S155 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S161 . 1 `S121 1 . 1 0 `S130 1 . 1 0 `S135 1 . 1 0 `S141 1 . 1 0 `S146 1 . 1 0 `S151 1 . 1 0 `S156 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES161  1 e 1 @148 ]
+[u S160 . 1 `S120 1 . 1 0 `S129 1 . 1 0 `S134 1 . 1 0 `S140 1 . 1 0 `S145 1 . 1 0 `S150 1 . 1 0 `S155 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES160  1 e 1 @148 ]
 [s S269 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
@@ -191,6 +199,7 @@
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3450
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+<<<<<<< Updated upstream:dist/default/production/Lab_11.X.production.sdb
 "43 C:\Users\javyp\OneDrive\Documentos\UNIVERSIDAD\Progra_MICROS\Lab_11_SPI\Lab_11.X\main_Lab.c
 [v _val_pot val_pot `uc  1 e 1 0 ]
 "71
@@ -207,4 +216,22 @@
 [v _isr isr `II(v  1 e 1 0 ]
 {
 "67
+=======
+"40 C:\Users\javyp\OneDrive\Documentos\UNIVERSIDAD\Progra_MICROS\Lab_11_SPI\Lab_11_MASTER.X\main_Postlab_MASTER.c
+[v _val_pot val_pot `uc  1 e 1 0 ]
+"64
+[v _main main `(v  1 e 1 0 ]
+{
+"98
+} 0
+"102
+[v _setup setup `(v  1 e 1 0 ]
+{
+"145
+} 0
+"50
+[v _isr isr `II(v  1 e 1 0 ]
+{
+"60
+>>>>>>> Stashed changes:dist/default/production/Lab_11_MASTER.X.production.sdb
 } 0
