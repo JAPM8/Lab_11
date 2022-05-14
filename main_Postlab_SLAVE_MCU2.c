@@ -79,10 +79,7 @@ void main(void) {
 void setup(void){
     ANSEL = 0;
     ANSELH = 0;
-        
-    TRISD = 0;
-    PORTD = 0;
-    
+            
     TRISA = 0b00100000;
     PORTA = 0;
     
@@ -99,7 +96,7 @@ void setup(void){
     SSPCONbits.CKP = 0; //Reloj inactivo en 0
     SSPCONbits.SSPEN = 1; // Habilitamos pines de SPI
     // SSPSTAT<7:6>
-    SSPSTATbits.CKE = 1; // Dato enviado cada flanco de subida
+    SSPSTATbits.CKE = 1; // Dato enviado cada flanco de subida del SCK
     SSPSTATbits.SMP = 0; // Dato al final del pulso de reloj
     
     //Config PWM
